@@ -257,40 +257,42 @@
         /* --- CSS CHO PHẦN 4 TỰ LUẬN TỪ INDEX2.HTML --- */
         .part4-row-container {
             display: flex;
-            gap: 12px;
+            gap: 8px;
             align-items: flex-start;
             margin-top: 10px;
-            flex-wrap: wrap;
+            flex-wrap: nowrap; /* Bắt buộc không rớt dòng */
         }
         .part4-left-col {
             flex: 1;
-            min-width: 250px;
+            min-width: 0;
         }
         .part4-right-col {
             flex: 1;
-            min-width: 250px;
+            min-width: 0;
             position: relative;
         }
         .btn-photo-trigger {
             width: 100%;
-            background: linear-gradient(135deg, #f97316, #ea580c);
+            background: linear-gradient(135deg, #c084fc, #a855f7); /* Màu tím nhẹ */
             color: #ffffff;
             border: none;
-            padding: 10px 14px;
+            padding: 10px 8px;
             border-radius: 8px;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
-            box-shadow: 0 2px 6px rgba(249, 115, 22, 0.25);
+            gap: 4px;
+            box-shadow: 0 2px 6px rgba(168, 85, 247, 0.25);
             transition: all 0.2s ease;
+            text-align: center;
+            line-height: 1.2;
         }
         .btn-photo-trigger:hover {
             transform: translateY(-1px);
-            box-shadow: 0 4px 10px rgba(249, 115, 22, 0.35);
+            box-shadow: 0 4px 10px rgba(168, 85, 247, 0.35);
         }
         .sub-padlet-dropdown {
             display: none;
@@ -363,6 +365,19 @@
         
         @keyframes spin { 100% { transform: rotate(360deg); } }
         @keyframes pulseWait { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.1); opacity: 0.8; } 100% { transform: scale(1); opacity: 1; } }
+
+        /* Tăng cỡ chữ hiển thị phần bài làm trên điện thoại (Không làm thay đổi Navbar) */
+        @media(max-width: 600px) {
+            .q-content-text { font-size: 1.15rem; }
+            .opt-text { font-size: 1.1rem; }
+            .short-input-box { font-size: 1.1rem; padding: 12px; }
+            .tf-table th { font-size: 1rem; }
+            .tf-table td { font-size: 1.05rem; }
+            .q-num-badge { min-width: 30px; height: 30px; font-size: 1rem; }
+            .opt-circle { width: 28px; height: 28px; font-size: 0.95rem; }
+            .opt-label { padding: 12px; }
+            .explanation-box { font-size: 1rem; }
+        }
     </style>
 </head>
 <body>
