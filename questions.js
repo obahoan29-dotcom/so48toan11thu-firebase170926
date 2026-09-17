@@ -1,13 +1,20 @@
 const examData = {
-    maDe: "DE48TOAN11",
-    title: "ĐỀ SỐ 48 - ÔN TẬP LƯỢNG GIÁC 11",
+    maDe: "DE77TOAN11",
+    title: "ĐỀ SỐ 77 - ÔN TẬP LƯỢNG GIÁC 11",
     password: "",
     timeLimitMinutes: 45,
+    
+    // Cấu hình thời gian MỞ và ĐÓNG bài thi (Định dạng: YYYY-MM-DDTHH:mm:ss)
+    // Ví dụ: Từ 08:00 ngày 17-09-2026 đến 08:00 ngày 18-09-2026
+    examStartTimeStr: "2026-09-17T01:00:00",
+    examEndTimeStr: "2026-09-18T22:00:00",
+    
     images: {
         "img_34": "",
         "img_36": "",
         "img_39": "",
-        "img_41": ""
+        "img_41": "",
+        "Q24": "" // Đã thêm để hỗ trợ cho câu tự luận có hình vẽ bên dưới
     },
     questions: [
         // ==================== PHẦN 1. TRẮC NGHIỆM NHIỀU LỰA CHỌN ====================
@@ -506,6 +513,40 @@ const examData = {
             imageKey: "img_41",
             correctAnswer: "-36",
             explanation: "Thời gian từ 3h00 đến lần gặp cuối trước 9h là $t = \\frac{63}{11}\\text{ giờ}$. Bằng $5{,}727\\text{ vòng}$. Góc lượng giác kim phút quay được: $\\theta = -2\\pi \\times \\frac{63}{11} \\approx -35{,}985 \\approx -36\\text{ rad}$."
+        },
+
+        // ==================== PHẦN 4. TỰ LUẬN ĐIỀN ĐÁP ÁN VÀ NỘP BÀI LÀM ====================
+        {
+            id: 42,
+            type: "essay",
+            question: "Vận tốc của một tàu con thoi từ lúc cất cánh tại thời điểm $t = 0$ (s) cho đến thời điểm $t = 100$ (s) được cho bởi công thức $v(t) = 0,0015t^3 - 0,085t^2 + 70$ (đơn vị: ft/s). Hỏi trong thời gian đó tàu con thoi đạt vận tốc lớn nhất bằng bao nhiêu ft/s (kết quả làm tròn đến hàng đơn vị)?",
+            imageKey: "",
+            correctAnswer: "2083",
+            explanation: "Xét $v'(t) = 0,0045t^2 - 0,17t = 0 \\Leftrightarrow t = 0$ hoặc $t = \\frac{340}{9} \\approx 37,78$. Tính $v(0) = 70$, $v(37,78) \\approx 29,63$, $v(100) = 2083$ ft/s. Vậy $v_{max} \\approx 2083$ ft/s."
+        },
+        {
+            id: 43,
+            type: "essay",
+            question: "Cho hàm số $y = ax^3 + bx^2 + cx + d$ có đồ thị như hình vẽ bên. Tính giá trị biểu thức $T = a + 2b + 3c + 4d$.",
+            imageKey: "Q24",
+            correctAnswer: "-17",
+            explanation: "Xác định được hàm số $f(x) = -x^3 + 3x - 4 \\Rightarrow a = -1, b = 0, c = 3, d = -4$. Đáp số đề cho $T = -17$."
+        },
+        {
+            id: 44,
+            type: "essay",
+            question: "Người ta muốn sản xuất một bể nước theo dạng khối lăng trụ tứ giác đều, không có nắp trên, làm bằng kính và có thể tích là $32\\text{ m}^3$. Biết giá của mỗi mét vuông kính là $600.000$ đồng. Số tiền tối thiểu phải trả để làm bể nước trên là bao nhiêu triệu đồng (làm tròn kết quả đến hàng phần chục của triệu đồng)?",
+            imageKey: "",
+            correctAnswer: "28,8",
+            explanation: "Gọi cạnh đáy là $a$, chiều cao $h$. Thể tích $V = a^2 h = 32 \\Rightarrow h = \\frac{32}{a^2}$. Diện tích kính $S = a^2 + 4ah = a^2 + \\frac{128}{a} \\ge 48\\text{ m}^2$. Số tiền tối thiểu: $48 \\times 0,6 = 28,8$ triệu đồng."
+        },
+        {
+            id: 45,
+            type: "essay",
+            question: "Một bác nông dân có $360\\text{ m}$ hàng rào và muốn rào lại một khu đất hình chữ nhật tiếp giáp với một con sông. Bác nông dân không cần rào cho phía giáp bờ sông. Hỏi bác nông dân có thể rào được khu đất với diện tích lớn nhất là bao nhiêu mét vuông?",
+            imageKey: "",
+            correctAnswer: "16200",
+            explanation: "Gọi hai chiều rộng vuông góc sông là $x$, chiều dài song song sông là $360 - 2x$. Diện tích $S(x) = x(360 - 2x) = 360x - 2x^2$. Đạt giá trị lớn nhất $S_{max} = 16200\\text{ m}^2$ khi $x = 90$."
         }
     ]
 };
