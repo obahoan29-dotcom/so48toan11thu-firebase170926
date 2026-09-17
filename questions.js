@@ -1,6 +1,6 @@
 const examData = {
-    maDe: "DE77TOAN11",
-    title: "ĐỀ SỐ 77 - ÔN TẬP LƯỢNG GIÁC 11",
+    maDe: "DE19TOAN10",
+    title: "ĐỀ SỐ 19 - ÔN THI HK 1 10",
     password: "",
     timeLimitMinutes: 45,
     
